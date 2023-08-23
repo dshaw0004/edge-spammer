@@ -76,14 +76,9 @@
 					"elevator js",
 					"dshaw0004 edge-spammer",
 					"edge-spammer",
-					// "hoisting",
-					// "baseline js",
-					// "d4.js",
-					// "solidjs",
-					// "astro js",
-					// "million js",
-					// "preact js",
 				];
+
+				const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 				const anchor = document.getElementById("anchor");
 				const is_mobile =
 					!!navigator.userAgent.match(/iphone|android|blackberry/gi) || false;
@@ -100,12 +95,20 @@
 				};
 				function startSpamming() {
 					// console.log(is_mobile);
+					anchor.click();
+					anchor.href = "https://dshaw0004.netlify.com";
+					anchor.click();
+					anchor.href = "https://pyapps.web.app";
+					anchor.click();
+					anchor.href = "https://github.com/dshaw0004";
+					anchor.click();
 					keyword.map((word, index) => {
 						if (is_mobile && index > 20) {
 							return;
 						}
 						anchor.href = URL + word;
 						anchor.click();
+						wait(1);
 					});
 					anchor.href = "https://dshaw0004.web.app";
 				}
